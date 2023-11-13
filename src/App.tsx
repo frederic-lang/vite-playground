@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { autoEditClient } from 'vite-plugin-autoedit'
+import { createAutoEditClient } from 'vite-plugin-autoedit'
 import countJSON from './count.json'
 
 function App() {
   const [count, setCount] = useState(countJSON.count)
-  const ae = autoEditClient()
+  const ae = createAutoEditClient(import.meta.hot!)
 
   return (
     <div className="App">
